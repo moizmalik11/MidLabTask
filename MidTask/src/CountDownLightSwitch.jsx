@@ -1,15 +1,20 @@
-import React, { useEffect } from 'react'
-import 
-export default function CountDownLightSwitch() {
+import React, {useState, useEffect } from 'react'
 
-const [toggel , setToggel]=("");
+ function CountDownLightSwitch() {
+
+const [toggel , setToggel]=useState("");
 
 useEffect(()=>{
+    
+    if(toggel==true){
+        console.log("White")
+    }else{
+        console.log("black")
+        }
+        toggel=true
+    },[toggel])
 
-
-
-
-},[toggel])
+   
   return (
     <div>
       <button id='toggel' className='toggel' value={toggel} onChange={(e)=> setToggel(e.target.value)} >
@@ -18,3 +23,4 @@ useEffect(()=>{
     </div>
   )
 }
+export default CountDownLightSwitch;
